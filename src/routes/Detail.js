@@ -15,14 +15,16 @@ function Detail() {
     }
     useEffect(() => {
         getMovie();
-    }, [])
+    }, []);
     return (
         <div>
             {
                 loding ? <h1>Loding...</h1> :
                     <div>
-                        <img src = "https://yts.mx/assets/images/movies/unicorn_town_2022/large-cover.jpg" />
-                        {movie.data.movie.title}
+                        <img src={movie.data.movie.large_cover_image} alt={movie.data.movie.large_cover_image} />
+                        <div>
+                            {movie.data.movie.title}
+                        </div>
                     </div>
             }
         </div>
